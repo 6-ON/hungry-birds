@@ -133,4 +133,4 @@ function endGame() {
     game.score = 0
     updateScore()
 }
-// init()
+init()
