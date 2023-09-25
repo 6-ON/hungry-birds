@@ -35,7 +35,6 @@ const user = {
     score: null,
 }
 function startGame() {
-    console.log('Game Started!');
     if (userName.value === '' && user.name === '') {
         alert('Please enter a name')
         return
@@ -48,7 +47,6 @@ function startGame() {
     game.started_at = Date.now()
     const l = [...pregame, ...postGame]
     l.forEach((element) => {
-        console.log(element);
         element.classList.add('hidden')
     })
 
@@ -91,7 +89,6 @@ function spawnBaby() {
     }, 1500)
 
     setTimeout(() => {
-        console.log(birdState)
         activeHoles = activeHoles.filter((h) => h !== hole)
         baby.remove()
     }, 2000)
@@ -120,9 +117,7 @@ function init() {
 }
 function endGame() {
     clearInterval(game.interval)
-    console.log('Game Over!')
     user.score = Date.now() - game.started_at
-    console.log(user)
     updateLeaderboard(user)
     postGame.forEach((element) => {
         element.classList.remove('hidden')
